@@ -1,0 +1,19 @@
+FROM node:18-alpine
+
+# Create app directory
+WORKDIR /usr/src/app
+
+# Copy package.json and package-lock.json
+COPY package*.json ./
+
+# Install ALL dependencies including dev dependencies
+RUN npm install
+
+# Create log directory
+RUN mkdir -p logs
+
+# Expose the application port
+EXPOSE 3000
+
+# The command will be overridden by docker-compose.dev.yml
+CMD ["npm", "run", "dev"]

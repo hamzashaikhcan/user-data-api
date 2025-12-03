@@ -9,6 +9,7 @@ The User Data API uses Redis as a backend for the Bull queue system, which handl
 ### For macOS:
 
 Using Homebrew:
+
 ```bash
 brew install redis
 brew services start redis
